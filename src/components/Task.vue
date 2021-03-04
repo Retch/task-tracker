@@ -4,11 +4,20 @@
       <div class="card-content white-text">
         <span class="card-title">{{ task.day }}</span>
         {{ task.text }}
-        {{ task.reminder }}
       </div>
       <div class="card-action">
-        <a @click="$emit('delete-task', task.id)">Test-Remove</a>
-        <i @click="$emit('toggle-reminder', task.id)" class="material-icons">add_alert</i>
+        <i
+          @click="$emit('delete-task', task.id)"
+          style="color: white; margin-right: 15px"
+          class="material-icons"
+          >delete_outline</i
+        >
+        <i
+          style="color: white"
+          @click="$emit('toggle-reminder', task.id)"
+          class="material-icons"
+          >{{ task.reminder ? "notification_important" : "add_alert" }}</i
+        >
       </div>
     </div>
   </div>
@@ -19,7 +28,6 @@ export default {
   name: "Task",
   props: {
     task: Object,
-    reminder: Boolean,
   },
 };
 </script>
