@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     onClick() {
-      console.log("consol");
+      this.$emit("show-add-task");
     },
   },
 };
