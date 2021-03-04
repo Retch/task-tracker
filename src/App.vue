@@ -1,7 +1,12 @@
 <template>
   <div class="container">
     <Header class="col s6" title="Task Tracker" />
-    <Tasks class="col s6" :tasks="tasks" />
+    <Tasks
+      @toggle-reminder="toggleReminder"
+      @delete-task="deleteTask"
+      class="col s6"
+      :tasks="tasks"
+    />
   </div>
 </template>
 
@@ -20,6 +25,16 @@ export default {
       tasks: [],
     };
   },
+  methods: {
+    deleteTask(id) {
+      this.tasks = this.tasks.filter((task) => task.id !== id);
+    },
+    toggleReminder(id) {
+      this.tasks = this.tasks.map((task) =>
+        task.id === id ? { ...task, reminder: !task.reminder } : task
+      );
+    },
+  },
   created() {
     this.tasks = [
       {
@@ -27,13 +42,13 @@ export default {
         text:
           "Appointment with doctor Fugiat fugiat cillum sit et in magna ad et mollit ea. Duis exercitation cupidatat quis ad.",
         day: "March 1st 12:30",
-        reminder: true,
+        reminder: false,
       },
       {
         id: 2,
         text: "Appointment in school",
         day: "Mai 1st 10:55",
-        reminder: true,
+        reminder: false,
       },
       {
         id: 3,
