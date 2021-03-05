@@ -2,9 +2,9 @@
   <button
     @click="onClick()"
     :style="{ background: color }"
-    class="waves-effect waves-light btn-small"
+    class="btn-floating btn-large waves-effect waves-light green z-depth-2 hoverable"
   >
-    {{ text }}
+    <i class="material-icons">{{ text }}</i>
   </button>
 </template>
 

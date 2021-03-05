@@ -1,19 +1,19 @@
 <template>
-  <div class="row">
+  <div class="row" style="">
     <form @submit="onSubmit" class="col s12">
       <div class="row">
-        <div class="input-field col s10">
+        <div class="input-field col s12">
           <input id="day" v-model="day" type="text" class="validate" />
           <label for="day">Day and Time</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s10">
+        <div class="input-field col s12">
           <input id="text" v-model="text" type="text" class="validate" />
           <label for="text">Text</label>
         </div>
       </div>
-      <p>
+      <p class="">
         <label>
           <input v-model="reminder" type="checkbox" />
           <span>Set Reminder</span>
@@ -21,7 +21,7 @@
       </p>
       <button
         style="background: green"
-        class="btn waves-effect waves-light"
+        class="waves-effect waves-light btn-small z-depth-2"
         type="submit"
         name="action"
       >

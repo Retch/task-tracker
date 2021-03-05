@@ -1,14 +1,15 @@
 <template>
   <header>
-    <div class="row">
-      <h3 class="col left-align">{{ title }}</h3>
-      <Button
-        v-show="homePage"
-        @btn-click="$emit('show-add-task')"
-        class="col valign-wrapper"
-        :text="showaddtask ? 'Close' : 'Add Task'"
-        :color="showaddtask ? '' : 'green'"
-      />
+    <div class="container">
+      <div class="row">
+        <h4 class="col">{{ title }}</h4>
+        <Button
+          v-show="homePage"
+          @btn-click="$emit('show-add-task')"
+          class="col right"
+          :text="showaddtask ? 'close' : 'add'"
+        />
+      </div>
     </div>
   </header>
 </template>
